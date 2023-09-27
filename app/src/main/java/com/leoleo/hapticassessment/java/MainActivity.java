@@ -8,8 +8,6 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.widget.Button;
 
-import com.google.android.material.snackbar.Snackbar;
-
 public class MainActivity extends AppCompatActivity {
     private static final long ONE_SHOT_TIMING = 20L;
     private static final int ONE_SHOT_AMPLITUDE = 255;
@@ -22,14 +20,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final Vibrator vibrator = getSystemService(Vibrator.class);
-        findViewById(R.id.click_effect_button).setOnClickListener(v -> {
-            Snackbar.make(v, "android.os.VibrationEffect.EFFECT_CLICKは非公開APIです", Snackbar.LENGTH_SHORT).show();
-            // vibrator.vibrate(VibrationEffect.createPredefined(EFFECT_CLICK));
-        });
+        findViewById(R.id.click_effect_button).setOnClickListener(v -> vibrator.vibrate(VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK)));
 
-        findViewById(R.id.oneshot_effect_button).setOnClickListener(v -> {
-            vibrator.vibrate(VibrationEffect.createOneShot(ONE_SHOT_TIMING, ONE_SHOT_AMPLITUDE));
-        });
+        findViewById(R.id.oneshot_effect_button).setOnClickListener(v -> vibrator.vibrate(VibrationEffect.createOneShot(ONE_SHOT_TIMING, ONE_SHOT_AMPLITUDE)));
 
         final Button waveformEffectButton = findViewById(R.id.waveform_effect_button);
         waveformEffectButton.setOnClickListener(v -> {
