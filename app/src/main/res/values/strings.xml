@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">HapticAssessmentJava</string>
+    <string name="app_name">Haptic Hardware Assessment 2023</string>
+    <string name="click_effect_button">Effect 1</string>
+    <string name="oneshot_effect_button">Effect 2</string>
+    <string name="waveform_effect_button">Effect 3</string>
+    <string name="button_3_pass">Effect 3: PASS</string>
+    <string name="button_3_fail">Effect 3: FAIL</string>
 </resources>
